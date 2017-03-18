@@ -9,13 +9,17 @@
         <module name="auth" />
         <module name="auth-microservice-communication" />
         <module name="email-api" />
+        <module name="entity" />
+        <module name="entity-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth" target="1.8" />
-      <module name="auth-microservice-communication" target="1.5" />
-      <module name="bindingjava" target="1.5" />
+      <module name="auth-microservice-communication" target="1.8" />
+      <module name="bindingjava" target="1.8" />
       <module name="email-api" target="1.8" />
+      <module name="entity" target="1.8" />
+      <module name="entity-core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

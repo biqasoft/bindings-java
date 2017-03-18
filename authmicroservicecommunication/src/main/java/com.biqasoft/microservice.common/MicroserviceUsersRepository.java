@@ -1,15 +1,15 @@
 package com.biqasoft.microservice.common;
 
 import com.biqasoft.entity.core.Domain;
-import com.biqasoft.entity.dto.useraccount.CreatedUser;
-import com.biqasoft.entity.dto.useraccount.UserRegisterRequest;
 import com.biqasoft.entity.core.useraccount.PersonalSettings;
 import com.biqasoft.entity.core.useraccount.UserAccount;
+import com.biqasoft.entity.dto.useraccount.CreatedUser;
+import com.biqasoft.entity.dto.useraccount.UserRegisterRequest;
+import com.biqasoft.microservice.common.dto.SecondFactorResponse;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPathVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPayloadVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.Microservice;
-
 import org.springframework.http.HttpMethod;
 
 import java.util.List;
@@ -66,7 +66,13 @@ public interface MicroserviceUsersRepository{
     @MicroMapping(path = "/domain/id/{id}", method = HttpMethod.DELETE)
     void deleteUserById(@MicroPathVar(param = "id") String id);
 
+    @MicroMapping(path = "/domain/2step", method = HttpMethod.POST)
+    SecondFactorResponse tryToAdd2StepAuth(@MicroPayloadVar("id") String id);
+
     @MicroMapping("")
     List<UserAccount> unsafeFindAllUsers();
+
+    @MicroMapping(path = "/domain/2step/modify", method = HttpMethod.POST)
+    void modifyTwoStepAuth(@MicroPayloadVar("enabled") boolean enableTwoStep, @MicroPayloadVar("code") String code);
 
 }

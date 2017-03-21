@@ -9,10 +9,11 @@
 
     <parent>
         <groupId>com.biqasoft</groupId>
-        <artifactId>binding-java</artifactId>
-        <version>1.0-RELEASE</version>
-        <relativePath>../pom.xml</relativePath>
+        <artifactId>base</artifactId>
+        <version>2016.8.4</version>
     </parent>
+
+    <version>${biqa.binding-version-version}</version>
 
     <dependencies>
 
@@ -33,32 +34,20 @@
         <dependency>
             <groupId>com.biqasoft</groupId>
             <artifactId>entity</artifactId>
-            <version>${project.version}</version>
+            <version>${biqa.binding-version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.biqasoft</groupId>
             <artifactId>microservice</artifactId>
-            <version>${project.version}</version>
+            <version>${biqa.infrastructure-version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.biqasoft</groupId>
             <artifactId>auth-microservice-communication</artifactId>
-            <version>${project.version}</version>
+            <version>${biqa.binding-version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>com.biqasoft</groupId>-->
-            <!--<artifactId>microservice-i18n</artifactId>-->
-            <!--<version>${project.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.biqasoft</groupId>-->
-            <!--<artifactId>common</artifactId>-->
-            <!--<version>${project.version}</version>-->
-        <!--</dependency>-->
 
     </dependencies>
 

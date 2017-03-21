@@ -19,7 +19,7 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.2.2.RELEASE" level="project" />
     <orderEntry type="module" module-name="entity" />
-    <orderEntry type="module" module-name="entity-core" />
+    <orderEntry type="library" name="Maven: com.biqasoft:entity-core:1.0-RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.javers:javers-core:3.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Maven: io.github.lukehutch:fast-classpath-scanner:2.0.13" level="project" />

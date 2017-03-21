@@ -4,22 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>entity</artifactId>
-
     <packaging>jar</packaging>
-
     <name>com.biqasoft.entity</name>
 
     <parent>
-        <artifactId>binding-java</artifactId>
         <groupId>com.biqasoft</groupId>
-        <version>1.0-RELEASE</version>
+        <artifactId>base</artifactId>
+        <version>2016.8.4</version>
     </parent>
+
+    <version>${biqa.binding-version}</version>
 
     <dependencies>
         <dependency>
             <groupId>com.biqasoft</groupId>
             <artifactId>entity-core</artifactId>
-            <version>${project.version}</version>
+            <version>${biqa.binding-version}</version>
         </dependency>
     </dependencies>
 

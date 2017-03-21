@@ -11,7 +11,7 @@
 
     <artifactId>entity-core</artifactId>
     <packaging>jar</packaging>
-    <version>${biqa.binding-version-version}</version>
+    <version>${biqa.binding-version}</version>
 
     <name>com.biqasoft.entity-core</name>
 

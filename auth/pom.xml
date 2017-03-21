@@ -13,7 +13,7 @@
         <version>2016.8.4</version>
     </parent>
 
-    <version>${biqa.binding-version-version}</version>
+    <version>${biqa.binding-version}</version>
 
     <dependencies>
 

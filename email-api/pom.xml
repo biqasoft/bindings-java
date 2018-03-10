@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>email-api</artifactId>
-    <packaging>jar</packaging>
-
-    <parent>
-        <groupId>com.biqasoft</groupId>
-        <artifactId>base</artifactId>
-        <version>2016.8.4</version>
-    </parent>
-
-    <version>${biqa.binding-version}</version>
-
-    <name>com.biqasoft.email-api</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.biqasoft</groupId>
-            <artifactId>microservice-communicator</artifactId>
-            <version>${microservice-communicator.version}</version>
-        </dependency>
-    </dependencies>
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>email-api</artifactId>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>com.biqasoft</groupId>
+    <artifactId>base</artifactId>
+    <version>2018.3.1</version>
+  </parent>
+  <version>${biqa.binding-version}</version>
+  <name>com.biqasoft.email-api</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.biqasoft</groupId>
+      <artifactId>microservice-communicator</artifactId>
+      <version>${microservice-communicator.version}</version>
+    </dependency>
+  </dependencies>
 </project>

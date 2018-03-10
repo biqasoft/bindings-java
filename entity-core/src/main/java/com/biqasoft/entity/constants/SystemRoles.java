@@ -11,7 +11,7 @@ package com.biqasoft.entity.constants;
 import io.swagger.annotations.ApiModel;
 
 @ApiModel
-public final class SYSTEM_ROLES {
+public final class SystemRoles {
 
     // This is special role, granted when authenticated in special password
     // not used by normal users

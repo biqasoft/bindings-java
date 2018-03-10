@@ -1,54 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0">
-
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>auth</artifactId>
-
-    <name>com.biqasoft.auth</name>
-    <packaging>jar</packaging>
-
-    <parent>
-        <groupId>com.biqasoft</groupId>
-        <artifactId>base</artifactId>
-        <version>2016.8.4</version>
-    </parent>
-
-    <version>${biqa.binding-version}</version>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.biqasoft</groupId>
-            <artifactId>entity</artifactId>
-            <version>${biqa.binding-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.biqasoft</groupId>
-            <artifactId>microservice</artifactId>
-            <version>${biqa.infrastructure-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.biqasoft</groupId>
-            <artifactId>auth-microservice-communication</artifactId>
-            <version>${biqa.binding-version}</version>
-        </dependency>
-
-    </dependencies>
-
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>auth</artifactId>
+  <name>com.biqasoft.auth</name>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>com.biqasoft</groupId>
+    <artifactId>base</artifactId>
+    <version>2018.3.1</version>
+  </parent>
+  <version>${biqa.binding-version}</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.biqasoft</groupId>
+      <artifactId>entity</artifactId>
+      <version>${biqa.binding-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.biqasoft</groupId>
+      <artifactId>microservice</artifactId>
+      <version>${biqa.infrastructure-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.biqasoft</groupId>
+      <artifactId>auth-microservice-communication</artifactId>
+      <version>${biqa.binding-version}</version>
+    </dependency>
+  </dependencies>
 </project>

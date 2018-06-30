@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>auth-context</artifactId>
+  <name>com.biqasoft.auth-context</name>
+  <packaging>jar</packaging>
+  <parent>
+    <groupId>com.biqasoft</groupId>
+    <artifactId>base</artifactId>
+    <version>2018.7.0</version>
+  </parent>
+  <version>${biqa.binding-version}</version>
+
+  <properties>
+    <grpc-netty.version>1.13.1</grpc-netty.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.reactivestreams</groupId>
+      <artifactId>reactive-streams</artifactId>
+      <version>${reactive-streams.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.projectreactor.ipc</groupId>
+      <artifactId>reactor-netty</artifactId>
+      <version>0.7.8.RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.biqasoft</groupId>
+      <artifactId>auth-microservice-communication</artifactId>
+      <version>${biqa.binding-version}</version>
+    </dependency>
+
+    <!-- grpc -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty</artifactId>
+      <version>${grpc-netty.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>${grpc-netty.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>${grpc-netty.version}</version>
+    </dependency>
+
+    <!-- todo: dirty hack for grpc and java 9+ -->
+    <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.5.0.Final</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.5.1</version>
+        <configuration>
+          <protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.13.1:exe:${os.detected.classifier}</pluginArtifact>
+          <protoSourceRoot>src/main/resources/proto</protoSourceRoot>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>compile-custom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>10</source>
+          <target>10</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

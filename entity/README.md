@@ -1,3 +1,0 @@
-# This module contains entity(and DTO) objects which used by another services (and microservices)
-
-Normally, in microservice architecture, modules should be independent and do not share entity, but...

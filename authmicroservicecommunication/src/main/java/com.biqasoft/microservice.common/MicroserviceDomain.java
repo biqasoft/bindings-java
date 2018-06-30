@@ -1,10 +1,9 @@
 package com.biqasoft.microservice.common;
 
-import com.biqasoft.entity.core.Domain;
+import com.biqasoft.microservice.common.dto.DomainDto;
+import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPathVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.Microservice;
-import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
-
 import org.springframework.http.HttpMethod;
 
 import java.util.List;
@@ -18,24 +17,24 @@ import java.util.List;
 public interface MicroserviceDomain {
 
     @MicroMapping(path = "", method = HttpMethod.POST)
-    Domain create(Domain domain);
+    DomainDto create(DomainDto domainDto);
 
     @MicroMapping(path = "/{id}/unsafe", method = HttpMethod.DELETE)
     void unsafeDelete(@MicroPathVar("id") String domain);
 
     @MicroMapping(path = "/unsafe", method = HttpMethod.PUT)
-    Domain unsafeUpdateDomain(Domain domain);
+    DomainDto unsafeUpdateDomain(DomainDto domainDto);
 
     @MicroMapping("/{id}/unsafe")
-    Domain unsafeFindDomainById(@MicroPathVar("id") String domain);
+    DomainDto unsafeFindDomainById(@MicroPathVar("id") String domain);
 
     @MicroMapping(path = "")
-    List<Domain> unsafeFindAllDomains();
+    List<DomainDto> unsafeFindAllDomains();
 
     @MicroMapping(path = "/my", method = HttpMethod.PUT)
-    Domain updateDomain(Domain domain);
+    DomainDto updateDomain(DomainDto domainDto);
 
     @MicroMapping("/my")
-    Domain findDomain();
+    DomainDto findDomain();
 
 }

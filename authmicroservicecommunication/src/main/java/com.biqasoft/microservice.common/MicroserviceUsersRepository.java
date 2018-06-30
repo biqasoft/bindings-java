@@ -1,11 +1,6 @@
 package com.biqasoft.microservice.common;
 
-import com.biqasoft.entity.core.Domain;
-import com.biqasoft.entity.core.useraccount.PersonalSettings;
-import com.biqasoft.entity.core.useraccount.UserAccount;
-import com.biqasoft.entity.dto.useraccount.CreatedUser;
-import com.biqasoft.entity.dto.useraccount.UserRegisterRequest;
-import com.biqasoft.microservice.common.dto.SecondFactorResponse;
+import com.biqasoft.microservice.common.dto.*;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPathVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPayloadVar;
@@ -23,42 +18,42 @@ import java.util.List;
 public interface MicroserviceUsersRepository{
 
     @MicroMapping(path = "/domain", method = HttpMethod.POST)
-    UserAccount addUser(UserRegisterRequest user);
+    UserAccountDto addUser(UserRegisterRequestDto user);
 
     @MicroMapping(path = "/register", method = HttpMethod.POST)
-    CreatedUser registerUser(UserRegisterRequest user);
+    CreatedUserDto registerUser(UserRegisterRequestDto user);
 
     @MicroMapping(value = "/domain/fulltext_search", method = HttpMethod.POST)
-    List<UserAccount> fullTextSearch(@MicroPayloadVar("text") String text);
+    List<UserAccountDto> fullTextSearch(@MicroPayloadVar("text") String text);
 
     @MicroMapping("/domain/id/{userId}")
-    UserAccount findByUserId(@MicroPathVar("userId") String userId);
+    UserAccountDto findByUserId(@MicroPathVar("userId") String userId);
 
     @MicroMapping("/search/domain/id/{userId}")
-    Domain findDomainForUserAccountId(@MicroPathVar("userId") String userId);
+    DomainDto findDomainForUserAccountId(@MicroPathVar("userId") String userId);
 
     @MicroMapping("/id/{userId}")
-    UserAccount unsafeFindUserById(@MicroPathVar("userId") String userId);
+    UserAccountDto unsafeFindUserById(@MicroPathVar("userId") String userId);
 
     // do not do this as HttpMethod.GET to avoid encode string problems
     @MicroMapping(path = "/find/username_or_oauth2_token", method = HttpMethod.POST)
-    UserAccount unsafeFindByUsernameOrOAuthToken(@MicroPayloadVar("username") String userAccountGet);
+    UserAccountDto unsafeFindByUsernameOrOAuthToken(@MicroPayloadVar("username") String userAccountGet);
 
     // update without checking permission
     @MicroMapping(path = "", method = HttpMethod.PUT)
-    UserAccount unsafeUpdateUserAccount(UserAccount user);
+    UserAccountDto unsafeUpdateUserAccount(UserAccountDto user);
 
     @MicroMapping(path = "/domain", method = HttpMethod.PUT)
-    UserAccount updateUserAccount(UserAccount user);
+    UserAccountDto updateUserAccount(UserAccountDto user);
 
     @MicroMapping(path = "/domain/current_user/set_online")
     void setCurrentUserOnline();
 
     @MicroMapping(path = "/domain/current_user/personal_settings", method = HttpMethod.PUT)
-    void setCurrentUserPersonalSettings(PersonalSettings personalSettings);
+    void setCurrentUserPersonalSettings(PersonalSettingsDto personalSettingsDto);
 
     @MicroMapping(path = "/domain")
-    List<UserAccount> findAllUsers();
+    List<UserAccountDto> findAllUsers();
 
     @MicroMapping(path = "/id/{id}", method = HttpMethod.DELETE)
     void unsafeDeleteUserById(@MicroPathVar(param = "id") String id);
@@ -67,10 +62,10 @@ public interface MicroserviceUsersRepository{
     void deleteUserById(@MicroPathVar(param = "id") String id);
 
     @MicroMapping(path = "/domain/2step", method = HttpMethod.POST)
-    SecondFactorResponse tryToAdd2StepAuth(@MicroPayloadVar("id") String id);
+    SecondFactorResponseDto tryToAdd2StepAuth(@MicroPayloadVar("id") String id);
 
     @MicroMapping("")
-    List<UserAccount> unsafeFindAllUsers();
+    List<UserAccountDto> unsafeFindAllUsers();
 
     @MicroMapping(path = "/domain/2step/modify", method = HttpMethod.POST)
     void modifyTwoStepAuth(@MicroPayloadVar("enabled") boolean enableTwoStep, @MicroPayloadVar("code") String code);

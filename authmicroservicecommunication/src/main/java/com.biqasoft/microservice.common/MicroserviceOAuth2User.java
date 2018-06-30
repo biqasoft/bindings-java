@@ -1,14 +1,13 @@
 package com.biqasoft.microservice.common;
 
-import com.biqasoft.entity.dto.useraccount.UserNameWithPassword;
-import com.biqasoft.microservice.common.dto.OAuth2MicroserviceNewCredentialsRequest;
-import com.biqasoft.microservice.common.dto.OAuth2MicroserviceNewTokenRequest;
-import com.biqasoft.microservice.common.dto.UserAccountOAuth2;
+import com.biqasoft.microservice.common.dto.oauth2.OAuth2MicroserviceNewCredentialsRequest;
+import com.biqasoft.microservice.common.dto.oauth2.OAuth2MicroserviceNewTokenRequest;
+import com.biqasoft.microservice.common.dto.oauth2.UserAccountOAuth2;
+import com.biqasoft.microservice.common.dto.UserNameWithPasswordDto;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPathVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPayloadVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.Microservice;
-
 import org.springframework.http.HttpMethod;
 
 import java.util.List;
@@ -22,7 +21,7 @@ import java.util.List;
 public interface MicroserviceOAuth2User {
 
     @MicroMapping(path = "/additional_username_password", method = HttpMethod.POST)
-    UserNameWithPassword createAdditionalUsernameAndPasswordCredentialsOauth(OAuth2MicroserviceNewCredentialsRequest UserAccountGroup);
+    UserNameWithPasswordDto createAdditionalUsernameAndPasswordCredentialsOauth(OAuth2MicroserviceNewCredentialsRequest UserAccountGroup);
 
     @MicroMapping(path = "/token/user_id/{userId}/token_id", method = HttpMethod.POST)
     void deleteOauthTokenFromUserAccountById(@MicroPathVar("userId") String userId,

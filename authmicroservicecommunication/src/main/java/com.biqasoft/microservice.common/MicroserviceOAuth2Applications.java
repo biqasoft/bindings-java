@@ -1,8 +1,8 @@
 package com.biqasoft.microservice.common;
 
-import com.biqasoft.entity.core.useraccount.oauth2.OAuth2Application;
-import com.biqasoft.entity.dto.httpresponse.SampleDataResponse;
-import com.biqasoft.microservice.common.dto.UserAccountOAuth2;
+import com.biqasoft.microservice.common.dto.oauth2.OAuth2Application;
+import com.biqasoft.microservice.common.dto.SampleDataResponseDto;
+import com.biqasoft.microservice.common.dto.oauth2.UserAccountOAuth2;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroMapping;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.MicroPathVar;
 import com.biqasoft.microservice.communicator.interfaceimpl.annotation.Microservice;
@@ -21,7 +21,7 @@ import java.util.List;
 public interface MicroserviceOAuth2Applications {
 
     @MicroMapping("/{id}/secret_code")
-    SampleDataResponse getSecretCodeForOAuthApplication(@MicroPathVar("id") String id);
+    SampleDataResponseDto getSecretCodeForOAuthApplication(@MicroPathVar("id") String id);
 
     @MicroMapping(path = "", method = HttpMethod.POST)
     OAuth2Application create(OAuth2Application application);

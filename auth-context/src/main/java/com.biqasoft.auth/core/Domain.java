@@ -14,37 +14,18 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
- * This is object for system use
- * user can not modify it, but can see through API
- * user cam modify {@link DomainSettings} class
+ * This is object for system use only
+ * User can not modify it, but can see through API
+ * To store some global domain data purpose use {@link DomainSettings} class which domain administrator is free to modify
  */
-@ApiModel("Represent main domain info such as balance, limits, etc. Not contain settings etc")
+@ApiModel("Represent main domain info")
 @Data
 public class Domain {
 
     private String domain;
-
-    @ApiModelProperty("main balance for domain")
-    private double balance;
-
-    @ApiModelProperty("additional balance wich user get from some sales etc")
-    private double bonusBalance;
-
-    @ApiModelProperty("balance currency")
-    private String balanceCurrency = "RUB";
-
-    @ApiModelProperty("affiliate program / partners sales")
-    private String partnerID;
-
-    @ApiModelProperty("which tarif of all domain")
-    private String tariff;
-
-    @ApiModelProperty("when tariff is expires")
-    private Date tariffUntil;
 
     @ApiModelProperty("this domain is active - not blocked. NOTE: not active domains do not process for metrics and data source changes")
     private boolean active = true;

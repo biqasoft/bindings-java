@@ -5,7 +5,7 @@ import com.biqasoft.auth.core.UserAccount;
 
 public class GrpcToInternalUserMapper {
 
-    static UserAccount mapFromGrpc (com.biqasoft.auth.internal.grpc.UserOuterClass.User user) {
+    public static UserAccount mapFromGrpc (com.biqasoft.auth.internal.grpc.UserOuterClass.User user) {
         UserAccount account = new UserAccount();
         account.setUsername(user.getUsername());
         account.setFirstname(user.getFirstname());
